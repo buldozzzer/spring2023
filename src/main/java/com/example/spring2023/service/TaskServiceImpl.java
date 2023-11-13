@@ -25,7 +25,7 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public void updateTask(Long id, Task updatedTask) {
-        Task task = taskRepository.getReferenceById(id);
+        Task task = taskRepository.getOne(id);
         task.setName(updatedTask.getName());
         task.setDescription(updatedTask.getDescription());
         task.setDate(updatedTask.getDate());
@@ -49,14 +49,14 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public void setTaskCompleted(Long id) {
-        Task task = taskRepository.getReferenceById(id);
+        Task task = taskRepository.getOne(id);
         task.setCompleted(true);
         taskRepository.save(task);
     }
 
     @Override
     public void setTaskNotCompleted(Long id) {
-        Task task = taskRepository.getReferenceById(id);
+        Task task = taskRepository.getOne(id);
         task.setCompleted(false);
         taskRepository.save(task);
     }

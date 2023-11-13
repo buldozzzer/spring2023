@@ -71,7 +71,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(Long id) {
-        User user = userRepository.getReferenceById(id);
+        User user = userRepository.getOne(id);
         user.getTasksOwned().forEach(task -> task.setOwner(null));
         userRepository.delete(user);
     }

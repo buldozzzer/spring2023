@@ -2,11 +2,12 @@ package com.example.spring2023.model;
 
 import lombok.Getter;
 
-import jakarta.validation.constraints.NotEmpty;
+
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
